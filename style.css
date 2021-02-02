@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: 'Iceland', cursive;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.buttons {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.button {
+  width: 10%;
+  height: 25px;
+}
+
+.grid {
+  height: 500px;
+  width: 500px;
+  display: grid;
+  grid-template: repeat(16, 1fr);
+  border: 5px solid rgb(111, 182, 5);
+}
+
+.cell {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: khaki;
+}

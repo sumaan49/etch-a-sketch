@@ -4,20 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etch A Sketch</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@700&family=Iceland&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+    <h1>Etch-A-Sketch</h1>
     <div class="buttons">
-      <div class="black">black</div>
-      <div class="grayscale">grayscale</div>
-      <div class="random">random</div>
+      <button class="black-btn button">black</button>
+      <button class="grayscale-btn button">grayscale</button>
+      <button class="random-btn button">random</button>
+      <button class="reset-btn button">reset</button>
       <div class="colorPicker">
-        <input type="color" class="color">
+        <input type="color" class="colorInput">
         <p>pick a color</p>
       </div>
       <div>
-        <input type="range" min=2 max=50 value=16 >
+        <input class="slider" type="range" min=2 max=50 value=16 >
         <p>16x16</p>
       </div>
     </div>
