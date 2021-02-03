@@ -25,8 +25,31 @@ const createGrid = (size) => {
       })
       grid.appendChild(div);
   }
-  };
 
-  window.addEventListener('load', createGrid(16));
+};
+
+// Generate random selection of colors
+
+const generateRandomColor = () => {
+    let colorString = '12345678ABCDEF';
+    let randomColor = '#';
+    for (let i = 0; i < 6; i++) {
+        randomColor += colorString[Math.floor(Math.random() * colorString.length)];
+    }
+    return randomColor;
+}
+const setRandomColor = () => {
+    let cell = grid.children;
+    let cellArr = Array.from(cell);
+    console.log(cell)
+
+    cellArr.forEach(el => {
+        el.addEventListener('mouseover', (e) => e.target.style.backgroundColor = generateRandomColor());
+    });
+}
+
+
+window.addEventListener('load', createGrid(10));
+random_btn.addEventListener('click', setRandomColor);
 
 
