@@ -4,6 +4,7 @@
   box-sizing: border-box;
   text-transform: capitalize;
   font-family: 'Iceland', cursive;
+  background: rgba(139, 189, 93, 0.5);
 }
 
 .container {
@@ -32,7 +33,7 @@
   width: 500px;
   display: grid;
   grid-template: repeat(16, 1fr);
-  border: 5px solid rgb(111, 182, 5);
+  border: 5px solid rgb(30, 48, 2);
 }
 
 .cell {

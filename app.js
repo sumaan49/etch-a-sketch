@@ -3,7 +3,7 @@ const container = document.querySelector('.container');
 const grid = document.querySelector('.grid');
 const buttons = document.querySelector('.buttons');
 const black_btn = document.querySelector('.black-btn');
-const grayscale_btn = document.querySelector('.grayscale-btn');
+const eraser_btn = document.querySelector('.eraser-btn');
 const random_btn = document.querySelector('.random-btn');
 const reset_btn = document.querySelector('reset-btn');
 const colorPicker = document.querySelector('.colorPicker');
@@ -21,12 +21,35 @@ const createGrid = (size) => {
       const div = document.createElement('div');
       div.classList.add('cell');
       div.addEventListener('mouseover', function(event){
-          event.target.style.backgroundColor = 'black';
+          event.target.style.backgroundColor = 'darkOliveGreen';
       })
       grid.appendChild(div);
   }
 
 };
+
+// Helper function to eliminate repetition
+
+const helper = (color) => {
+    let cell = grid.children;
+    let cellArr = Array.from(cell);
+    cellArr.forEach(el => {
+        el.addEventListener('mouseover', (e) => e.target.style.backgroundColor = color);
+    });
+}
+
+
+// Generate black colored grid-cells
+const generateBlackGrid = () => {
+    helper('black');
+}
+
+// Erase the colored grids
+
+const eraseBackground = () => {
+    helper('khaki');
+}
+
 
 // Generate random selection of colors
 
@@ -41,15 +64,18 @@ const generateRandomColor = () => {
 const setRandomColor = () => {
     let cell = grid.children;
     let cellArr = Array.from(cell);
-    console.log(cell)
-
     cellArr.forEach(el => {
         el.addEventListener('mouseover', (e) => e.target.style.backgroundColor = generateRandomColor());
     });
 }
 
 
-window.addEventListener('load', createGrid(10));
+// Event listeners
+
+window.addEventListener('load', createGrid(16));
 random_btn.addEventListener('click', setRandomColor);
+black_btn.addEventListener('click', generateBlackGrid);
+eraser_btn.addEventListener('click', eraseBackground);
+reset_btn.addEventListener('click', resetGrid);
 
 
