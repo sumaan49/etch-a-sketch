@@ -5,10 +5,11 @@ const buttons = document.querySelector('.buttons');
 const black_btn = document.querySelector('.black-btn');
 const eraser_btn = document.querySelector('.eraser-btn');
 const random_btn = document.querySelector('.random-btn');
-const reset_btn = document.querySelector('reset-btn');
+const reset_btn = document.querySelector('.reset-btn');
 const colorPicker = document.querySelector('.colorPicker');
 const colorInput = document.querySelector('.colorInput');
 const slider = document.querySelector('.slider');
+const dimension = document.querySelector('.dimension');
 
 
 // Create grid
@@ -69,6 +70,21 @@ const setRandomColor = () => {
     });
 }
 
+// Reset the grid
+
+const resetGrid = () => {
+    grid.textContent = '';
+    createGrid(slider.value);
+}
+
+// Change the grid size based on user input
+
+const changeSize = () => {
+    grid.textContent = '';
+    dimension.innerText = `${slider.value}x${slider.value}`;
+    createGrid(slider.value);
+}
+
 
 // Event listeners
 
@@ -77,5 +93,6 @@ random_btn.addEventListener('click', setRandomColor);
 black_btn.addEventListener('click', generateBlackGrid);
 eraser_btn.addEventListener('click', eraseBackground);
 reset_btn.addEventListener('click', resetGrid);
+slider.addEventListener('change', changeSize);
 
 
