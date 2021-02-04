@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@700&family=Iceland&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body>-
   <div class="container">
     <h1>Etch-A-Sketch</h1>
     <div class="buttons">
@@ -17,15 +17,16 @@
       <button class="eraser-btn button">eraser</button>
       <button class="reset-btn button">reset</button>
       <div class="colorPicker">
-        <input type="color" class="colorInput">
-        <p>pick a color</p>
+        <input type="color" name="colorInput" class="colorInput" value="#fff000">
+        <label for="colorInput">pick a color</label>
       </div>
-      <div>
-        <input class="slider" type="range" min=2 max=50 value=16 >
+      <div class=sliderDiv>
+        <input class="slider" type="range" min=1 max=100 value=16 >
         <p class="dimension">16x16</p>
       </div>
     </div>
     <div class="grid"></div>
+    <footer>Created By Suman | The Odin Project </footer>
   </div>
 <script src="app.js"></script>
 </body>

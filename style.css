@@ -4,7 +4,6 @@
   box-sizing: border-box;
   text-transform: capitalize;
   font-family: 'Iceland', cursive;
-  background: rgba(139, 189, 93, 0.5);
 }
 
 .container {
@@ -14,29 +13,75 @@
   justify-content: center;
   min-height: 100vh;
   width: 100%;
+  background: url('./background.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1{
+  font-size: 70px;
+  text-shadow:2px 2px rgb(255, 255, 255);
+  padding: 0 10px 30px 10px;
 }
 
 .buttons {
-  width: 65%;
+  width: 55%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-start;
+  padding-bottom: 10px;
 }
 
 .button {
   width: 10%;
   height: 25px;
+  border-radius: 20px;
+  font-size: 15px;
+  background-image: linear-gradient(to bottom right, rgb(161, 196, 161), rgb(88, 177, 143) ) ;
+  outline: none;
+  color: black;
+  position: relative;
+  border: 1px solid white;
+}
+
+button:hover {
+  transform: scale(1.1);
+
+}
+input.colorInput {
+  margin-left: 15px;
+}
+input[type=range] {
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  padding: 5px 10px 0 0;
+
+}
+.sliderDiv {
+  margin-top: 5px;
+  margin-left: 0;
+}
+
+.dimension {
+  margin-left: 40px;
 }
 
 .grid {
-  height: 500px;
-  width: 500px;
+  height: 450px;
+  width: 450px;
   display: grid;
   grid-template: repeat(16, 1fr);
-  border: 5px solid rgb(30, 48, 2);
+  border: 2px solid rgb(18, 100, 82);
 }
 
 .cell {
-  border: 1px solid rgb(255, 255, 255);
-  background-color: khaki;
+  border: 0.5px solid rgb(241, 237, 237);
+  background-color: rgb(181, 196, 148);
+}
+
+footer {
+  color: rgb(204, 230, 219);
+  margin-top: 15px;
 }

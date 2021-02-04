@@ -30,7 +30,6 @@ const createGrid = (size) => {
 };
 
 // Helper function to eliminate repetition
-
 const helper = (color) => {
     let cell = grid.children;
     let cellArr = Array.from(cell);
@@ -46,14 +45,12 @@ const generateBlackGrid = () => {
 }
 
 // Erase the colored grids
-
 const eraseBackground = () => {
-    helper('khaki');
+    helper('rgb(181, 196, 148)');
 }
 
 
 // Generate random selection of colors
-
 const generateRandomColor = () => {
     let colorString = '12345678ABCDEF';
     let randomColor = '#';
@@ -71,20 +68,23 @@ const setRandomColor = () => {
 }
 
 // Reset the grid
-
 const resetGrid = () => {
     grid.textContent = '';
     createGrid(slider.value);
 }
 
 // Change the grid size based on user input
-
 const changeSize = () => {
     grid.textContent = '';
     dimension.innerText = `${slider.value}x${slider.value}`;
     createGrid(slider.value);
 }
 
+// Select Custom color
+const customColor = () => {
+    helper(colorInput.value);
+}
+customColor();
 
 // Event listeners
 
@@ -94,5 +94,6 @@ black_btn.addEventListener('click', generateBlackGrid);
 eraser_btn.addEventListener('click', eraseBackground);
 reset_btn.addEventListener('click', resetGrid);
 slider.addEventListener('change', changeSize);
+colorInput.addEventListener('input', customColor);
 
 
